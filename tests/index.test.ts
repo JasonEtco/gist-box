@@ -27,7 +27,7 @@ describe('gist-box', () => {
 
       const box = new GistBox({ id: '123', token: '123abc' })
       const actual = await box.update({ content: 'pizza' })
-      expect(actual.data).toEqual({ example: { content: 'pizza' } })
+      expect(actual.data).toEqual({ files: { example: { content: 'pizza' } } })
       expect(scopedNock.isDone()).toBe(true)
     })
   })
