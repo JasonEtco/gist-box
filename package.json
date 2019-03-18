@@ -1,0 +1,70 @@
+{
+  "name": "gist-box",
+  "version": "0.0.1",
+  "description": "A helper class for updating a single-file Gist",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "rimraf lib && tsc -p tsconfig.json",
+    "lint": "tslint --project tests",
+    "test": "tsc --noEmit -p tests && jest --coverage && npm run lint",
+    "test:update": "tsc --noEmit -p tests && jest --coverage -u && npm run lint",
+    "prepare": "npm test && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JasonEtco/gist-box.git"
+  },
+  "keywords": [
+    "github",
+    "github api"
+  ],
+  "author": "Jason Etcovitch <jasonetco@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JasonEtco/gist-box/issues"
+  },
+  "homepage": "https://github.com/JasonEtco/gist-box#readme",
+  "dependencies": {
+    "@octokit/request": "^2.4.2"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.11",
+    "@types/nock": "^9.3.1",
+    "@types/node": "^11.11.3",
+    "jest": "^24.5.0",
+    "nock": "^10.0.6",
+    "standard": "^12.0.1",
+    "ts-jest": "^24.0.0",
+    "tslint": "^5.14.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-config-standard": "^8.0.1",
+    "typescript": "^3.3.3333"
+  },
+  "standard": {
+    "env": [
+      "jest"
+    ]
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/lib/"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "js",
+      "json"
+    ],
+    "transform": {
+      ".+\\.tsx?$": "ts-jest"
+    },
+    "testMatch": [
+      "<rootDir>/tests/**/*.test.(ts|js)"
+    ],
+    "globals": {
+      "ts-jest": {
+        "babelConfig": false
+      }
+    }
+  }
+}
