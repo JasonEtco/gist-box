@@ -1,5 +1,5 @@
-<h3 align="center">gist-box</h3>
-<p align="center">A helper class for updating a single-file Gist<p>
+<h3 align="center">GistBox</h3>
+<p align="center">📌📋 A helper class for updating a single-file Gist<p>
 <p align="center"><a href="https://npmjs.com/package/gist-box"><img src="https://badgen.net/npm/v/gist-box" alt="NPM"></a> <a href="https://action-badges.now.sh"><img src="https://action-badges.now.sh/JasonEtco/gist-box" alt="Build Status"></a> <a href="https://codecov.io/gh/JasonEtco/gist-box/"><img src="https://badgen.now.sh/codecov/c/github/JasonEtco/gist-box" alt="Codecov"></a></p>
 
 ## Usage
@@ -14,13 +14,26 @@ $ npm install gist-box
 const { GistBox } = require('gist-box')
 ```
 
-## How it works
+### API
 
 ```js
-const box = new GistBox(gist_id, token)
+const box = new GistBox({ id, token })
 await box.update({
   filename: 'example.md',
   description: 'A new description',
   content: 'The new content'
 })
 ```
+
+You can also import some boundary numbers to use when dealing with pinned Gists:
+
+```js
+const {
+  MAX_LENGTH,
+  MAX_LINES
+} = require('gist-box')
+```
+
+---
+
+Shoutout to [@matchai](https://github.com/matchai) for starting this trend with [bird-box](https://github.com/matchai/bird-box)!

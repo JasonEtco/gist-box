@@ -10,7 +10,7 @@ describe('gist-box', () => {
 
   describe('#get', () => {
     it('gets the Gist', async () => {
-      const box = new GistBox('123', '123abc')
+      const box = new GistBox({ id: '123', token: '123abc' })
       expect(await box.get()).toEqual(
         expect.objectContaining({
           data: { files: { example: { description: 'pizza' } } }
@@ -25,7 +25,7 @@ describe('gist-box', () => {
         .patch('/gists/123')
         .reply(200, (_: string, body: string) => JSON.parse(body))
 
-      const box = new GistBox('123', '123abc')
+      const box = new GistBox({ id: '123', token: '123abc' })
       const actual = await box.update({ content: 'pizza' })
       expect(actual.data).toEqual({ example: { content: 'pizza' } })
       expect(scopedNock.isDone()).toBe(true)

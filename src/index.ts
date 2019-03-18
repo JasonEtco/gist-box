@@ -1,5 +1,16 @@
 import request from '@octokit/request'
 
+export interface GistBoxOptions {
+  /**
+   * The ID of the Gist
+   */
+  id: string
+  /**
+   * A GitHub API token to authenticate with
+   */
+  token: string
+}
+
 export interface Updates {
   filename?: string
   content?: string
@@ -19,7 +30,7 @@ export class GistBox {
   public id: string
   private token: string
 
-  constructor (id: string, token: string) {
+  constructor ({ id, token }: GistBoxOptions) {
     this.id = id
     this.token = token
   }
