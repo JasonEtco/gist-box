@@ -25,6 +25,14 @@ export const MAX_LENGTH = 46
  * The maximum number of lines in a pinned Gist
  */
 export const MAX_LINES = 5
+/**
+ * The maximum width of a pinned Gist image
+ */
+export const MAX_WIDTH = 325
+/**
+ * The maximum height of a pinned Gist image
+ */
+export const MAX_HEIGHT = 100
 
 export class GistBox {
   public id: string
