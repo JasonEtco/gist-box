@@ -1,6 +1,6 @@
 {
   "name": "gist-box",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "A helper class for updating a single-file Gist",
   "main": "lib/index.js",
   "scripts": {
