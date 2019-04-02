@@ -29,8 +29,10 @@ You can also import some boundary numbers to use when dealing with pinned Gists:
 
 ```js
 const {
-  MAX_LENGTH,
-  MAX_LINES
+  MAX_LENGTH, // The number of characters rendered in one line
+  MAX_LINES,  // The number of lines it will render
+  MAX_HEIGHT, // The height of the box, in pixels
+  MAX_WIDTH   // The width of the box, in pixels
 } = require('gist-box')
 ```
 
