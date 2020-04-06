@@ -1,4 +1,4 @@
-import request from '@octokit/request'
+import { request } from '@octokit/request'
 
 export interface GistBoxOptions {
   /**

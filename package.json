@@ -25,20 +25,19 @@
   },
   "homepage": "https://github.com/JasonEtco/gist-box#readme",
   "dependencies": {
-    "@octokit/request": "^2.4.2"
+    "@octokit/request": "^5.3.4"
   },
   "devDependencies": {
-    "@types/jest": "^24.0.11",
-    "@types/nock": "^9.3.1",
-    "@types/node": "^11.11.3",
-    "jest": "^24.5.0",
-    "nock": "^10.0.6",
-    "standard": "^12.0.1",
-    "ts-jest": "^24.0.0",
-    "tslint": "^5.14.0",
+    "@types/jest": "^25.2.1",
+    "@types/node": "^13.11.0",
+    "jest": "^25.2.7",
+    "nock": "^12.0.3",
+    "standard": "^14.3.3",
+    "ts-jest": "^25.3.1",
+    "tslint": "^6.1.1",
     "tslint-config-prettier": "^1.18.0",
-    "tslint-config-standard": "^8.0.1",
-    "typescript": "^3.3.3333"
+    "tslint-config-standard": "^9.0.0",
+    "typescript": "^3.8.3"
   },
   "standard": {
     "env": [
