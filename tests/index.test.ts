@@ -23,7 +23,7 @@ describe('gist-box', () => {
     it('updates the Gist', async () => {
       const scopedNock = nock('https://api.github.com')
         .patch('/gists/123')
-        .reply(200, (_: string, body: string) => JSON.parse(body))
+        .reply(200, (_, body) => body)
 
       const box = new GistBox({ id: '123', token: '123abc' })
       const actual = await box.update({ content: 'pizza' })
