@@ -61,8 +61,13 @@ export class GistBox {
   public async update (updates: Updates) {
     const gist = await this.get()
     const filename = Object.keys(gist.data.files)[0]
+    const defaultContent = gist.data.files[filename].content || ''
     return request('PATCH /gists/:gist_id', {
-      files: { [filename]: updates },
+      files: { [filename]: {
+        content: updates.content || defaultContent,
+        filename: updates.filename || filename
+      }},
+      description: updates.description || gist.data.description,
       gist_id: this.id,
       headers: {
         authorization: `token ${this.token}`
