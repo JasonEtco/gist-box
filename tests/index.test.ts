@@ -5,7 +5,7 @@ describe('gist-box', () => {
   beforeEach(() => {
     nock('https://api.github.com')
       .get('/gists/123')
-      .reply(200, { files: { example: { description: 'pizza' } } })
+      .reply(200, { files: { example: {} }, description: 'pizza' })
   })
 
   describe('#get', () => {
@@ -13,7 +13,7 @@ describe('gist-box', () => {
       const box = new GistBox({ id: '123', token: '123abc' })
       expect(await box.get()).toEqual(
         expect.objectContaining({
-          data: { files: { example: { description: 'pizza' } } }
+          data: { description: 'pizza', files: { example: {} } }
         })
       )
     })
@@ -26,8 +26,11 @@ describe('gist-box', () => {
         .reply(200, (_, body) => body)
 
       const box = new GistBox({ id: '123', token: '123abc' })
-      const actual = await box.update({ content: 'pizza' })
-      expect(actual.data).toEqual({ files: { example: { content: 'pizza' } } })
+      const actual = await box.update({ content: 'pizza', description: 'description' })
+      expect(actual.data).toEqual({
+        description: 'description',
+        files: { example: { content: 'pizza', filename: 'example' } }
+      })
       expect(scopedNock.isDone()).toBe(true)
     })
   })
