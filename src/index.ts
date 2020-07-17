@@ -28,7 +28,7 @@ export const MAX_LINES = 5
 /**
  * The maximum width of a pinned Gist image
  */
-export const MAX_WIDTH = 325
+export const MAX_WIDTH = 378
 /**
  * The maximum height of a pinned Gist image
  */
