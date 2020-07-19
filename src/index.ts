@@ -19,6 +19,7 @@ export interface Updates {
 
 /**
  * The maximum number of characters in a pinned Gist line
+ * Note: This number varies across different fonts
  */
 export const MAX_LENGTH = 63
 /**
@@ -28,7 +29,7 @@ export const MAX_LINES = 5
 /**
  * The maximum width of a pinned Gist image
  */
-export const MAX_WIDTH = 325
+export const MAX_WIDTH = 378
 /**
  * The maximum height of a pinned Gist image
  */
