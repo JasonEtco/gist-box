@@ -19,8 +19,9 @@ export interface Updates {
 
 /**
  * The maximum number of characters in a pinned Gist line
+ * Note: This number varies across different fonts
  */
-export const MAX_LENGTH = 48
+export const MAX_LENGTH = 63
 /**
  * The maximum number of lines in a pinned Gist
  */
